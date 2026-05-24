@@ -33,7 +33,7 @@ The netbook link is: https://colab.research.google.com/drive/1JK0CM_cM-v0O080YRE
 
 
 
-## Screenshots
+## Preview
 
 ![App Screenshot](https://github.com/PannagaBhat71/currency--detection/blob/main/Screenshot%20from%202026-05-24%2021-30-34.png)
 
