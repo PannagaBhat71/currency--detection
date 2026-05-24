@@ -1,36 +1,84 @@
-# currency--dtetction
-using roboflow i labelled different images of indian currency and trained it to yolov8 using colab
-Hello everyone my name is pannaga
 
-my pc specs are
-cpu: pentium e5300
-ram: 4gb ddr3
-os: zorin 18.1
+# currency detection
 
-i will share my journey of how did i create this project 
-
-STEP 1
-shoot videos of different angles of currency notes
-and create a account in roboflow and create project move the videos and it will split the frames. Set it to 2 frames per second
-
-STEP2 LABELLING
-start labelling the images using its auto detect feature 
-
-STEP3 create versions and export as code
-select the sidebar option and create a version and enable show code and copy the python code
-
-STEP4 open colab and train
-
-STEP5 OPTIMISATION
-if ur cpu is old as mine it doesnt support avx so download onnxruntime 1.17.0
-and convert ur model.pt to model.onnx
-
-STEP 6
-see the code and deploy
+A brief description of what this project does and who it's for
 
 
-IMP NOTE
-CONS OF MY PROJECT
-I FORGOT TO TRAIN IT WITH 10 RUPEES
-BCKSIDE OF THE NOTE SOMETIMES WORK AND SOMETIMES NOT
+
+
+This project does object detection of. Indian currency notes like 20,50,500,100,200. i trained yolov8. By 427 images labelled using roboflow 
+in google colab
+
+The netbook link is: https://colab.research.google.com/drive/1JK0CM_cM-v0O080YREeJ5E_rStDDtUFJ?usp=sharing
+
+
+
+
+
+## Features
+
+- 77 to 97% accuracy
+- optimised for pentium cpu
+- trained with 50 EPOCHS
+
+
+
+
+## Tech Stack
+
+**training-modules-in-python** ultralytic, roboflow, cv2, yolo
+
+**locally-running-modules-for pentium:** onnxruntime, cv2, numpy, openvino
+
+
+
+
+## Screenshots
+
+![App Screenshot](https://dummyimage.com/468x300?text=App+Screenshot+Here)
+
+
+## Cons
+
+1. This model sometimes detect backside of the note and sometimes not. accuracy is lower when shown backside of the note
+2. Important one i didnt train the model older notes of 20,100 and i forgot to train 10
+## Support
+
+For support, email pannagabhat886@gmail.com
+
+
+## Lessons Learned
+
+well im a beginner who just started learning opencv and object detection. It is actually easy to train a model 
+
+But it is hard to deploy locally if ur system doesnt support avx. Like mine which uses pentium e5300
+
+## To fix that
+
+ 1. Download Intel's official signing key
+wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+
+ 2. Add the key safely to your Zorin system keyring
+sudo gpg --output /etc/apt/trusted.gpg.d/intel.gpg --dearmor GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+
+3. link that
+
+echo "deb https://apt.repos.intel.com/openvino ubuntu22 main" | sudo tee /etc/apt/sources.list.d/intel-openvino.list
+
+4. Install openvino globally
+
+sudo apt update
+
+sudo apt install openvino -y
+
+5.Install onnxruntime
+
+pip3 install onnxruntime==1.17.0 numpy --break-system-packages
+
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
